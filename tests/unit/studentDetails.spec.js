@@ -7,4 +7,12 @@ describe("StudentDetails", () => {
 
     expect(wrapper.isVueInstance()).toBeTruthy();
   });
+  it("works with prop studentName", () => {
+    const wrapper = shallowMount(StudentDetails, {
+      propsData: {
+        studentName: "Test Name"
+      }
+    });
+    expect(wrapper.find("h1").text()).toBe("Test Name");
+  });
 });
